@@ -307,12 +307,15 @@ Recorded on 2026-10-27.
   [#40459609255](https://github.com/Researcher86/architecture-lab/actions/runs/40459609255)
   — success.
 - Book commits: `4beb998` (chapters and READMEs), `efbf607` (Prettier),
-  `13ca74b` (Book CI step); final book HEAD `13ca74b`.
+  `13ca74b` (Book CI step), `1e4dd10` (sync event-count fix); final book HEAD
+  `1e4dd10`.
 - Book CI run:
-  [#40460992185](https://github.com/Researcher86/engineering-lab-book/actions/runs/40460992185)
+  [#40461428425](https://github.com/Researcher86/engineering-lab-book/actions/runs/40461428425)
   — success.
 - Checker output: `chapters=7 code_blocks=74 linked=53 exact=53 links=53
   resolved=53 unique_links=53 local_links=7 local_resolved=7` → `ok`.
-- Post-release docs correction: this commit fixes the `42`/`52` event
-  breakdown in `docs/BENCHMARKS.md` and `docs/COMPLEXITY.md`. Source files and
-  book excerpts are unchanged, so the book remains pinned to `v1.0.0`.
+- Post-release docs correction: `7f8a2f6` fixed the `42`/`52` event
+  breakdown in `docs/BENCHMARKS.md` and `docs/COMPLEXITY.md` (CI
+  [#40461253439](https://github.com/Researcher86/architecture-lab/actions/runs/40461253439)
+  — success). Source files and book excerpts are unchanged, so the book remains
+  pinned to `v1.0.0`.
