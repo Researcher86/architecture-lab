@@ -232,9 +232,11 @@ notifications 10, stale entries before delivery 0
 ```
 
 The event count differs because sync mode handles 10 accepted enrollments and
-each produces catalog, enrollment and billing facts; event-driven mode
-handles 8. The scenario does not compare speed. It compares final state and
-invariants.
+event-driven mode 8. Both publish two offering events before the requests; the
+second pump delivers `42 = 8×5 + 2` in event-driven mode and
+`52 = 10×5 + 2` in sync, where the extra two are `catalog.seat_released` for
+cancellations. Total `eventsPublished` is 44 and 54 respectively. The scenario
+does not compare speed. It compares final state and invariants.
 
 ## What is not measured
 

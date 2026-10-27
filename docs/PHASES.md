@@ -243,7 +243,7 @@ modes; `var/results/architecture-lab-scenario.txt` is generated but ignored.
 **Definition of done:** `make test`, `make analyse`, `make format-check` green;
 numbers in docs come from the recorded runs.
 
-### Phase 11 — Release 🚧
+### Phase 11 — Release ✅
 
 - Public repository `https://github.com/Researcher86/architecture-lab`.
 - Annotated tag `v1.0.0`.
@@ -253,7 +253,7 @@ numbers in docs come from the recorded runs.
 **Definition of done:** repository is public; tag points at the release commit;
 release exists; CI for that commit is green.
 
-### Phase 12 — Book ⏳
+### Phase 12 — Book ✅
 
 - Seven Russian chapters in `book/architecture-lab/`.
 - Each chapter: problem, mechanism, experiment, failure modes, verification,
@@ -296,11 +296,23 @@ The full command list is in the README; measured tables are in
 
 ## 7. Final record
 
-To be filled after release and book publication:
+Recorded on 2026-10-27.
 
-- Release commit: pending
-- Annotated tag: pending
-- Lab CI run: pending
-- Book commit: pending
-- Book CI run: pending
-- Checker output: pending
+- Release commit: `a920641` (`docs: document the architecture, measurements and
+  decisions`); the measured code commit is `aab9748`.
+- Annotated tag: `v1.0.0` → `a920641` (tag object `7b743dc`).
+- Release:
+  <https://github.com/Researcher86/architecture-lab/releases/tag/v1.0.0>.
+- Lab CI run for `a920641`:
+  [#40459609255](https://github.com/Researcher86/architecture-lab/actions/runs/40459609255)
+  — success.
+- Book commits: `4beb998` (chapters and READMEs), `efbf607` (Prettier),
+  `13ca74b` (Book CI step); final book HEAD `13ca74b`.
+- Book CI run:
+  [#40460992185](https://github.com/Researcher86/engineering-lab-book/actions/runs/40460992185)
+  — success.
+- Checker output: `chapters=7 code_blocks=74 linked=53 exact=53 links=53
+  resolved=53 unique_links=53 local_links=7 local_resolved=7` → `ok`.
+- Post-release docs correction: this commit fixes the `42`/`52` event
+  breakdown in `docs/BENCHMARKS.md` and `docs/COMPLEXITY.md`. Source files and
+  book excerpts are unchanged, so the book remains pinned to `v1.0.0`.

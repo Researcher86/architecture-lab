@@ -90,15 +90,24 @@ billing.payment_succeeded | billing.payment_failed
 enrollment.confirmed      | enrollment.cancelled
 ```
 
-That is five events. Publishing two offerings adds two
-`catalog.course_offering_published` events. The scenario measured:
+That is five facts per accepted request. A failed payment also publishes
+`catalog.seat_released`, so a cancelled enrollment produces six events.
+Publishing two offerings adds two `catalog.course_offering_published` events
+before the requests. The scenario measured:
 
-| Mode | Accepted | Published events | Delivered |
-|---|---:|---:|---:|
-| event-driven | 8 | 2 | 42 = 2 + 8×5 |
-| sync | 10 | 2 | 52 = 2 + 10×5 |
+| Mode | Accepted | Cancelled | Total published | Second pump delivered |
+|---|---:|---:|---:|---:|
+| event-driven | 8 | 2 | 44 = 2 + 8×5 + 2 | 42 = 8×5 + 2 |
+| sync | 10 | 2 | 54 = 2 + 10×5 + 2 | 52 = 10×5 + 2 |
 
-Event-driven and sync produce the same five facts per accepted enrollment; the
+The two offering events are delivered by the first `pump()` inside the
+scenario, before any enrollment request. `pending_events_before_pump` and
+`events_delivered` therefore describe the second pump only, while
+`eventsPublished` counts the whole run. The `42` is not `2 + 8×5`: it is eight
+requests × five facts plus two release events, and the two offering events are
+already in the earlier delivery.
+
+Event-driven and sync produce the same facts per accepted enrollment; the
 difference is *when* Billing runs and how many requests fit before the seats
 are exhausted. In sync mode a declined payment releases its seat immediately,
 so two more students are accepted. That is an architectural consequence visible
