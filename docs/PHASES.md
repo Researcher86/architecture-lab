@@ -257,7 +257,9 @@ release exists; CI for that commit is green.
 
 - Seven Russian chapters in `book/architecture-lab/`.
 - Each chapter: problem, mechanism, experiment, failure modes, verification,
-  numbers, summary, exercises, next chapter.
+  summary, exercises, next chapter. Numbers live in the experiment section,
+  next to the command that produced them, rather than in a section of their
+  own.
 - Code excerpts pinned to `v1.0.0` with exact line ranges.
 - Book README, root book README, Prettier, checker, Book CI step.
 - Record the final book commit and CI run ID here.
