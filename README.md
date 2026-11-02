@@ -50,7 +50,7 @@ Open a shell in the same container with `make shell`; stop it with `make down`.
 | **Dependency rule as code** | A token-level scanner builds the import graph, checks allowed directions, finds cycles and reports coupling metrics |
 | **Real transactions** | SQLite document store, outbox and processed-event keys share one PDO; the in-memory adapters are an explicit test double |
 | **Measured, not asserted** | Every claim has an experiment or benchmark; the environment and commit travel with the numbers |
-| **Book contract** | Every chapter quotes real output and links to code pinned at `v1.0.0` |
+| **Book contract** | Every chapter quotes real output and links to code pinned at `v1.0.1` |
 
 ## Chapters
 
@@ -232,7 +232,7 @@ without that block is an anecdote.
 
 - **[Engineering Lab book](https://github.com/Researcher86/engineering-lab-book)** —
   the Russian narrative: one chapter per architectural idea, code excerpts
-  pinned to this repository's `v1.0.0` tag.
+  pinned to this repository's `v1.0.1` tag.
 - **[Algorithms Lab](https://github.com/Researcher86/algorithms-lab)** — the
   sibling laboratory that measures data structures and algorithms; this
   project applies the same measurement discipline to boundaries and flows.

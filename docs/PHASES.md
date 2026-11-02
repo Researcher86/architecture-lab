@@ -31,7 +31,7 @@ engineering-lab/                     # workspace
 | Component | Role |
 |---|---|
 | `architecture-lab` | Executable source of truth: code, tests, measurements, English docs |
-| `book/architecture-lab` | Russian narrative, seven chapters, code pinned to `v1.0.0` |
+| `book/architecture-lab` | Russian narrative, seven chapters, code pinned to `v1.0.1` |
 | `book/php-systems-lab/tools/check_book.py` | Verifies code blocks and links, with `--expected-chapters` |
 | `book/.github/workflows/book.yml` | Book CI: existing books, Algorithms Lab, Architecture Lab |
 | `engineering-lab-book` | Umbrella book repository and published narrative |
@@ -44,8 +44,8 @@ engineering-lab/                     # workspace
    from each angle; the baseline is the explicit "before" implementation.
 3. **The book is written from the code.** Implementation, tests and
    measurements first; chapters quote real files and real output.
-4. **Links are pinned.** Every book link targets `v1.0.0` or a full SHA, never
-   a branch.
+4. **Links are pinned.** Every book link targets a release tag (now `v1.0.1`)
+   or a full SHA, never a branch.
 5. **Languages.** Code, comments, README and `docs/` are English. Book chapters
    are Russian.
 6. **One command per experiment.** `make experiment ARGS="..."` is the
@@ -317,5 +317,9 @@ Recorded on 2026-10-27.
 - Post-release docs correction: `7f8a2f6` fixed the `42`/`52` event
   breakdown in `docs/BENCHMARKS.md` and `docs/COMPLEXITY.md` (CI
   [#40461253439](https://github.com/Researcher86/architecture-lab/actions/runs/40461253439)
-  — success). Source files and book excerpts are unchanged, so the book remains
-  pinned to `v1.0.0`.
+  — success). Source files and book excerpts were unchanged, so the book stayed
+  pinned to `v1.0.0` at the time.
+- `v1.0.1` (`0f76a2b`) corrected `docs/BENCHMARKS.md` to say both
+  bounded-context modes record the same five facts. Source files are unchanged
+  from `v1.0.0`; the book now pins `v1.0.1` so its documentation links show the
+  corrected text.
