@@ -194,8 +194,9 @@ delivery, which is visible in both the time and the flat delta.
 
 Both operations enroll 50 students and drain the outbox. In sync mode
 Enrollment calls Billing inline through a port; in event-driven mode Billing
-and Enrollment exchange events. The workloads are not identical: event-driven
-mode records and delivers more events.
+and Enrollment exchange events. Both record the same five facts per
+accepted enrollment (see COMPLEXITY.md); what differs is *when* Billing runs:
+inside the request in sync mode, in the dispatcher in event-driven mode.
 
 | Benchmark | Iterations | Median | p95 | max | ops/sec | PHP delta | peak delta |
 |---|---:|---:|---:|---:|---:|---:|---:|
